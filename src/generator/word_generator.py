@@ -451,7 +451,7 @@ def add_parameters_table(document, parameters: List[Any], required_only: bool = 
     for parameter in parameters:
         row = table.add_row().cells
         row[0].text = parameter.name
-        row[1].text = format_type_display(parameter.type)
+        row[1].text = PARAMETER_CONFIG[parameter.name]["type"] if parameter.name == "userName" else format_type_display(parameter.type)
         row[2].text = format_size_display(parameter)
         row[3].text = "Sí" if parameter.required else "No"
         desc = parameter.description or f"Parámetro {parameter.location} de la petición."
@@ -467,6 +467,22 @@ def collect_schema_rows(properties: List[Any], prefix: str = "") -> List[Dict[st
     for prop in properties:
         full_name = f"{prefix}.{prop.name}" if prefix else prop.name
         desc = prop.description
+        # ── Parámetros nuevos del microservicio Vaults ─────────────────
+        # Se validan ANTES de la cadena genérica para que no sean
+        # capturados por ramas amplias (status, type, name, link,
+        # username). Solo aplican a nombres propios de Vaults.
+        if not desc:
+            p_lower = prop.name.lower()
+            if "salesstatus" in p_lower:
+                desc = "Estado de venta del Vault (`available` u `onHold`)."
+            elif "vaulttype" in p_lower:
+                desc = "Tipo de Vault (ej. `FINCA_RAIZ`)."
+            elif "displayname" in p_lower:
+                desc = "Nombre visible del indicador o valor."
+            elif "videolink" in p_lower:
+                desc = "Enlace al video del Vault."
+            elif "adminusername" in p_lower:
+                desc = "Nombre de usuario del administrador que confirma el Vault."
         if not desc:
             p_lower = prop.name.lower()
             if "statuscode" in p_lower:
@@ -599,12 +615,67 @@ def collect_schema_rows(properties: List[Any], prefix: str = "") -> List[Dict[st
                 desc = "Tipo de wallet o clasificación del recurso."
             elif "id" in p_lower:
                 desc = "Identificador único del registro."
+            # ── Parámetros nuevos del microservicio Vaults ─────────────
+            elif "search" in p_lower:
+                desc = "Filtro por texto de búsqueda (nombre o descripción del Vault)."
+            elif "trend" in p_lower:
+                desc = "Filtro por tendencia (`up` o `down`)."
+            elif "buylimit" in p_lower:
+                desc = "Límite máximo de compra por nivel de membresía."
+            elif "buyminlimit" in p_lower:
+                desc = "Límite mínimo de compra por nivel de membresía."
+            elif "limit" in p_lower:
+                desc = "Cantidad máxima de Vaults por página."
+            elif "owner" in p_lower:
+                desc = "Identificador del propietario (owner) del Vault."
+            elif "essential" in p_lower:
+                desc = "Límite de compra para el nivel essential."
+            elif "advanced" in p_lower:
+                desc = "Límite de compra para el nivel advanced."
+            elif "premium" in p_lower:
+                desc = "Límite de compra para el nivel premium."
+            elif "initialsupply" in p_lower:
+                desc = "Cantidad inicial de tokens del Vault."
+            elif "availablestock" in p_lower:
+                desc = "Cantidad de tokens disponibles para la venta."
+            elif "valueinusd" in p_lower:
+                desc = "Valor total del Vault en dólares (USD)."
+            elif "description" in p_lower:
+                desc = "Descripción textual del Vault."
+            elif "additionalinfo" in p_lower:
+                desc = "Información adicional del inmueble."
+            elif "coordinates" in p_lower:
+                desc = "Coordenadas geográficas del inmueble."
+            elif "lng" in p_lower:
+                desc = "Longitud de la ubicación del inmueble."
+            elif "lat" in p_lower:
+                desc = "Latitud de la ubicación del inmueble."
+            elif "assetindicators" in p_lower:
+                desc = "Indicadores del activo (nombre, etiqueta y valores)."
+            elif "values" in p_lower:
+                desc = "Valores del indicador."
+            elif "value" in p_lower:
+                desc = "Valor numérico del indicador."
+            elif "icon" in p_lower:
+                desc = "Icono asociado al valor."
+            elif "units" in p_lower:
+                desc = "Unidad de medida del valor."
+            elif "includeimages" in p_lower:
+                desc = "Indica si se deben adjuntar imágenes al Vault."
+            elif "includedocs" in p_lower:
+                desc = "Indica si se deben adjuntar documentos públicos al Vault."
+            elif "mainimage" in p_lower:
+                desc = "Nombre del archivo de la imagen principal del Vault."
+            elif "publicdocs" in p_lower:
+                desc = "Lista de documentos públicos del Vault."
+            elif "strategiclocation" in p_lower:
+                desc = "Descripción de la ubicación estratégica del Vault."
             else:
                 desc = "Sin descripción"
 
         rows.append({
             "name": full_name,
-            "type": format_type_display(prop.type),
+            "type": PARAMETER_CONFIG[prop.name]["type"] if prop.name == "userName" else format_type_display(prop.type),
             "size": format_size_display(prop),
             "required": "Sí" if prop.required else "No",
             "description": desc,

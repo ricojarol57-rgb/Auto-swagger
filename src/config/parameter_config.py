@@ -341,5 +341,162 @@ PARAMETER_CONFIG = {
     "address": {
         "type": "string",
         "size": "Variable",
-    }
+    },
+    # ============================================================
+    # MICROSERVICIO VAULTS
+    # ============================================================
+    "salesStatus": {
+        "type": "string",
+        "min": 1,
+        "max": 9,
+    },
+    "search": {
+        "type": "string",
+        "min": 1,
+        "max": 50,
+    },
+    "vaultType": {
+        "type": "string",
+        "min": 1,
+        "max": 50,
+    },
+    "trend": {
+        "type": "string",
+        "min": 1,
+        "max": 50,
+    },
+    "limit": {
+        "type": "number",
+        "min": 1,
+        "max": 50,
+    },
+    "owner": {
+        "type": "string",
+        "min": 1,
+        "max": 36,
+    },
+    "buyLimit": {
+        "type": "object",
+        "size": "---",
+    },
+    "buyMinLimit": {
+        "type": "object",
+        "size": "---",
+    },
+    "essential": {
+        "type": "number",
+        "min": 1,
+        "max": 50,
+    },
+    "advanced": {
+        "type": "number",
+        "min": 1,
+        "max": 50,
+    },
+    "premium": {
+        "type": "number",
+        "min": 1,
+        "max": 50,
+    },
+    "initialSupply": {
+        "type": "number",
+        "min": 1,
+        "max": 50,
+    },
+    "availableStock": {
+        "type": "number",
+        "min": 1,
+        "max": 50,
+    },
+    "valueInUSD": {
+        "type": "number",
+        "min": 1,
+        "max": 50,
+    },
+    "description": {
+        "type": "string",
+        "min": 1,
+        "max": 500,
+    },
+    "additionalInfo": {
+        "type": "object",
+        "size": "---",
+    },
+    "coordinates": {
+        "type": "object",
+        "size": "---",
+    },
+    "lng": {
+        "type": "string",
+        "min": 1,
+        "max": 50,
+    },
+    "lat": {
+        "type": "string",
+        "min": 1,
+        "max": 50,
+    },
+    "assetIndicators": {
+        "type": "array",
+        "min": 0,
+        "max": 100,
+    },
+    "displayName": {
+        "type": "string",
+        "min": 1,
+        "max": 50,
+    },
+    "values": {
+        "type": "array",
+        "min": 0,
+        "max": 100,
+    },
+    "value": {
+        "type": "number",
+        "min": 1,
+        "max": 50,
+    },
+    "icon": {
+        "type": "string",
+        "min": 1,
+        "max": 50,
+    },
+    "units": {
+        "type": "string",
+        "min": 1,
+        "max": 50,
+    },
+    "includeImages": {
+        "type": "boolean",
+        "size": "----",
+    },
+    "includeDocs": {
+        "type": "boolean",
+        "size": "----",
+    },
+    "mainImage": {
+        "type": "string",
+        "min": 1,
+        "max": 100,
+    },
+    "publicDocs": {
+        "type": "array",
+        "min": 0,
+        "max": 100,
+    },
+    "videoLink": {
+        "type": "string",
+        "min": 1,
+        "max": 50,
+    },
+    "strategicLocation": {
+        "type": "string",
+        "min": 1,
+        "max": 100,
+    },
+    "adminUserName": {
+        "type": "string",
+        "min": 1,
+        "max": 36,
+    },
 }
