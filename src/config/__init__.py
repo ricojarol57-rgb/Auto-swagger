@@ -47,7 +47,7 @@ SWAGGER_SERVICES: List[Dict] = [
         "url": "https://qacore-rummi.gse.com.co/users/api-docs/",
         "section_name": "Rummi User Administration API",
         "filter_paths": ["/users"],
-        "auth": None,
+        "auth": {"username": SWAGGER_AUTH_USERNAME, "password": SWAGGER_AUTH_PASSWORD} if SWAGGER_AUTH_USERNAME and SWAGGER_AUTH_PASSWORD else None,
     },
     {
         "url": "https://qacore-rummi.gse.com.co/trading/api-docs/",
@@ -59,7 +59,7 @@ SWAGGER_SERVICES: List[Dict] = [
         "url": "https://qacore-rummi.gse.com.co/file-manager/api-docs/",
         "section_name": "File Manager Service",
         "filter_paths": ["/file-manager"],
-        "auth": None,
+        "auth": {"username": SWAGGER_AUTH_USERNAME, "password": SWAGGER_AUTH_PASSWORD} if SWAGGER_AUTH_USERNAME and SWAGGER_AUTH_PASSWORD else None,
     },
     {
         "url": "https://qacore-rummi.gse.com.co/events/api-docs/",
@@ -76,7 +76,13 @@ SWAGGER_SERVICES: List[Dict] = [
     {
         "url": "https://qacore-rummi.gse.com.co/vaults/api-docs/",
         "section_name": "Rummi Vaults API",
-        "filter_paths": ["/vaults", "/auth"],
+        "filter_paths": ["/vaults"],
+        "auth": {"username": SWAGGER_AUTH_USERNAME, "password": SWAGGER_AUTH_PASSWORD} if SWAGGER_AUTH_USERNAME and SWAGGER_AUTH_PASSWORD else None,
+    },
+        {
+        "url": "https://qacore-rummi.gse.com.co/ramping/api-docs/",
+        "section_name": "Rummi Ramping API",
+        "filter_paths": ["/ramping"],
         "auth": {"username": SWAGGER_AUTH_USERNAME, "password": SWAGGER_AUTH_PASSWORD} if SWAGGER_AUTH_USERNAME and SWAGGER_AUTH_PASSWORD else None,
     },
 ]

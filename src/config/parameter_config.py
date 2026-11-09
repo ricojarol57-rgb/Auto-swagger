@@ -24,9 +24,8 @@ PARAMETER_CONFIG = {
         "max": 35,
     },
     "userName": {
-        "type": "string",
-        "min": 1,
-        "max": 36,
+        "type": "UUID V4",
+        "size": "Según estándar",
     },
     "statusCode": {
         "type": "number",
