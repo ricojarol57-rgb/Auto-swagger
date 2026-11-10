@@ -24,3 +24,6 @@ output/
 
 # Environment variables
 .env
+
+# Tests
+tests/
