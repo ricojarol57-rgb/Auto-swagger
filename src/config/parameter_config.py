@@ -20,21 +20,19 @@ PARAMETER_CONFIG = {
     },
     "email": {
         "type": "string",
-        "min": 1,
-        "max": 35,
+        "size": "20",
     },
     "userName": {
         "type": "UUID V4",
-        "size": "Según estándar",
+        "size": "Según Estándar",
     },
     "statusCode": {
         "type": "number",
-        "size": "3 dígitos",
+        "size": "3 ",
     },
     "code": {
         "type": "string",
-        "min": 1,
-        "max": 5,
+        "size": "5 ",
     },
     "data": {
         "type": "object",
@@ -42,13 +40,11 @@ PARAMETER_CONFIG = {
     },
     "message": {
         "type": "string",
-        "min": 1,
-        "max": 50,
+        "size": "50 ",
     },
     "users": {
         "type": "array",
-        "min": 0,
-        "max": 100,
+        "size": "100",
     },
     "user": {
         "type": "object",
@@ -60,8 +56,7 @@ PARAMETER_CONFIG = {
      },
     "profilePictureUrl": {
         "type": "string",
-        "min": 1,
-        "max": 100,
+        "size": "Variable ",
     },
     "presignedPostProfileImage": {
         "type": "object",
@@ -69,63 +64,51 @@ PARAMETER_CONFIG = {
         },
     "password": {
         "type": "string",
-        "min": 8,
-        "max": 20,
+        "size": "8 ",
     },
     "newPassword": {
         "type": "string",
-        "min": 8,
-        "max": 20,
+        "size": "8 ",
     },
     "confirmationCode": {
         "type": "string",
-        "min": 6,
-        "max": 6,
+        "size": "6 ",
     },
     "otp": {
         "type": "string",
-        "min": 6,
-        "max": 6,
+        "size": "6 ",
     },
     "phone": {
         "type": "string",
-        "min": 1,
-        "max": 15,
+        "size": "15 ",
     },
     "name": {
         "type": "string",
-        "min": 1,
-        "max": 25,
+        "size": "20 ",
     },
     "documentNumber": {
         "type": "string",
-        "min": 5,
-        "max": 20,
+        "size": "12",
     },
     "role": {
         "type": "string",
-        "min": 1,
-        "max": 25,
+        "size": "20 ",
     },
     "userRole": {
         "type": "string",
-        "min": 1,
-        "max": 50,
+        "size": "50 ",
     },
     "bio_code": {
         "type": "string",
-        "min": 1,
-        "max": 20,
+        "size": "20 ",
     },
     "bio_status": {
         "type": "string",
-        "min": 1,
-        "max": 15,
+        "size": "15 ",
     },
     "kyc_level": {
         "type": "string",
-        "min": 1,
-        "max": 25,
+        "size": "10",
     },
     "isAcceptATDP": {
         "type": "boolean",
@@ -133,48 +116,39 @@ PARAMETER_CONFIG = {
     },
     "lastKey": {
         "type": "string",
-        "min": 1,
-        "max": 25,
+        "size": "25 ",
     },
     "phone_number": {
     "type": "string",
-    "min": 1,
-    "max": 15,
+    "size": "15",
     },
     "custom_documentNumber": {
         "type": "string",
-        "min": 1,
-        "max": 20,
+        "size": "15 ",
     },
     "custom_documentType": {
         "type": "string",
-        "min": 1,
-        "max": 20,
+        "size": "15",
     },
     "custom_firstName": {
         "type": "string",
-        "min": 1,
-        "max": 25,
+        "size": "25",
     },
     "custom_lastName": {
         "type": "string",
-        "min": 1,
-        "max": 25,
+        "size": "25 ",
     },
     "custom_nickname": {
         "type": "string",
-        "min": 1,
-        "max": 25,
+        "size": "25",
     },
     "custom_country": {
         "type": "string",
-        "min": 1,
-        "max": 25,
+        "size": "25",
     },
     "custom_documentCountry": {
         "type": "string",
-        "min": 1,
-        "max": 20,
+        "size": "20",
     },
     "amount": {
         "type": "number",
@@ -182,18 +156,15 @@ PARAMETER_CONFIG = {
     },
     "buyer": {
         "type": "string",
-        "min": 1,
-        "max": 25
+        "size": "25",
     },
     "seller": {
         "type": "string",
-        "min": 1,
-        "max": 25
+        "size": "25",
     },
     "atdpType": {
         "type": "string",
-        "min": 1,
-        "max": 10
+        "size": "10",
     },
     "idTemplate": {
         "type": "string",
@@ -201,8 +172,7 @@ PARAMETER_CONFIG = {
     },
     "pin": {
         "type": "string",
-        "min": 4,
-        "max": 6
+        "size": "6",
     },
     "hash": {
         "type": "string",
@@ -220,14 +190,12 @@ PARAMETER_CONFIG = {
     # MICROSERVICIO EVENTS
     # ============================================================
     "userId": {
-        "type": "string",
-        "min": 1,
-        "max": 36,
+        "type": "UUID V4",
+        "size": "Según Estándar",
     },
     "username": {
         "type": "string",
-        "min": 1,
-        "max": 36,
+        "size": "25",
     },
     "payload": {
         "type": "object",
@@ -235,8 +203,7 @@ PARAMETER_CONFIG = {
     },
     "title": {
         "type": "string",
-        "min": 1,
-        "max": 50,
+        "size": "50 ",
     },
     "link": {
         "type": "string",
@@ -244,22 +211,19 @@ PARAMETER_CONFIG = {
     },
     "type": {
         "type": "string",
-        "min": 1,
-        "max": 20,
+        "size": "20",
     },
     "notificationId": {
         "type": "string",
-        "min": 1,
-        "max": 50,
+        "size": "50",
     },
     "notification": {
         "type": "object",
         "size": "---",
     },
     "id": {
-        "type": "string",
-        "min": 1,
-        "max": 50,
+        "type": "UUID V4",
+        "size": "Según Estándar",
     },
     "read": {
         "type": "boolean",
@@ -282,33 +246,27 @@ PARAMETER_CONFIG = {
     # ============================================================
     "balances": {
         "type": "array",
-        "min": 0,
-        "max": 100,
+        "size": "100",
     },
     "detailTokens": {
         "type": "array",
-        "min": 0,
-        "max": 100,
+        "size": "100",
     },
     "symbol": {
         "type": "string",
-        "min": 1,
-        "max": 10,
+        "size": "100",
     },
     "stablecoin": {
         "type": "string",
-        "min": 1,
-        "max": 10,
+        "size": "10",
     },
     "country": {
         "type": "string",
-        "min": 1,
-        "max": 3,
+        "size": "3",
     },
     "status": {
         "type": "string",
-        "min": 1,
-        "max": 10,
+        "size": "10",
     },
     "balancePol": {
         "type": "object",
@@ -347,33 +305,27 @@ PARAMETER_CONFIG = {
     # ============================================================
     "salesStatus": {
         "type": "string",
-        "min": 1,
-        "max": 9,
+        "size": "9",
     },
     "search": {
         "type": "string",
-        "min": 1,
-        "max": 50,
+        "size": "50",
     },
     "vaultType": {
         "type": "string",
-        "min": 1,
-        "max": 50,
+        "size": "50",
     },
     "trend": {
         "type": "string",
-        "min": 1,
-        "max": 50,
+        "size": "50",
     },
     "limit": {
         "type": "number",
-        "min": 1,
-        "max": 50,
+        "size": "50",
     },
     "owner": {
         "type": "string",
-        "min": 1,
-        "max": 36,
+        "size": "36",
     },
     "buyLimit": {
         "type": "object",
@@ -385,38 +337,31 @@ PARAMETER_CONFIG = {
     },
     "essential": {
         "type": "number",
-        "min": 1,
-        "max": 50,
+        "size": "50",
     },
     "advanced": {
         "type": "number",
-        "min": 1,
-        "max": 50,
+        "size": "50",
     },
     "premium": {
         "type": "number",
-        "min": 1,
-        "max": 50,
+        "size": "50",
     },
     "initialSupply": {
         "type": "number",
-        "min": 1,
-        "max": 50,
+        "size": "50",
     },
     "availableStock": {
         "type": "number",
-        "min": 1,
-        "max": 50,
+        "size": "50",
     },
     "valueInUSD": {
         "type": "number",
-        "min": 1,
-        "max": 50,
+        "size": "50",
     },
     "description": {
         "type": "string",
-        "min": 1,
-        "max": 500,
+        "size": "500",
     },
     "additionalInfo": {
         "type": "object",
@@ -428,43 +373,35 @@ PARAMETER_CONFIG = {
     },
     "lng": {
         "type": "string",
-        "min": 1,
-        "max": 50,
+        "size": "50",
     },
     "lat": {
         "type": "string",
-        "min": 1,
-        "max": 50,
+        "size": "50",
     },
     "assetIndicators": {
         "type": "array",
-        "min": 0,
-        "max": 100,
+        "size": "100",
     },
     "displayName": {
         "type": "string",
-        "min": 1,
-        "max": 50,
+        "size": "50",
     },
     "values": {
         "type": "array",
-        "min": 0,
-        "max": 100,
+        "size": "100",
     },
     "value": {
         "type": "number",
-        "min": 1,
-        "max": 50,
+        "size": "50",
     },
     "icon": {
         "type": "string",
-        "min": 1,
-        "max": 50,
+        "size": "50",
     },
     "units": {
         "type": "string",
-        "min": 1,
-        "max": 50,
+        "size": "50",
     },
     "includeImages": {
         "type": "boolean",
@@ -476,27 +413,22 @@ PARAMETER_CONFIG = {
     },
     "mainImage": {
         "type": "string",
-        "min": 1,
-        "max": 100,
+        "size": "100",
     },
     "publicDocs": {
         "type": "array",
-        "min": 0,
-        "max": 100,
+        "size": "100",
     },
     "videoLink": {
         "type": "string",
-        "min": 1,
-        "max": 50,
+        "size": "50",
     },
     "strategicLocation": {
         "type": "string",
-        "min": 1,
-        "max": 100,
+        "size": "100",
     },
     "adminUserName": {
         "type": "string",
-        "min": 1,
-        "max": 36,
+        "size": "36",
     },
 }
